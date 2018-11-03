@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Api.Data_grab;
+using Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -11,9 +13,10 @@ namespace Api.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Test> Get()
         {
-            return new string[] { "value1", "value2" };
+            Query query = new Query();
+            return query.getAll();
         }
 
         // GET api/values/5
